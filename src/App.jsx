@@ -4,6 +4,9 @@ import HeroSection from "./components/HeroSection";
 import Products from "./components/Products";
 import ProductsSection from "./components/ProductsSection/ProductsSection";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
+import SpecialtySection from "./components/SpecialtySection";
+import ClientsSection from "./components/ClientsSection";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -12,6 +15,9 @@ function App() {
       {/* <Products /> */}
       <ProductsSection />
       <ImageCarousel />
+      <SpecialtySection />
+      <ClientsSection />
+      <Footer />
     </>
   );
 }
