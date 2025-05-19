@@ -2,13 +2,11 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import XrayUnitsHighlight from "./XrayUnitsHighlight";
 
-// Import images from the assets folder
-// Adjust the variable names if they map to different images in your design
-import computedRadiographyBg from "../../assets/CR.png"; // Assuming CR.png is for Computed Radiography background
-import medicalXrayFilm from "../../assets/Xrayfilm.png"; // For Medical X-Ray Dry Film
-import wirelessDrPanel from "../../assets/Xraypanel.png"; // For Wireless DR panel
-import digitalRadiographyBg from "../../assets/DR.png"; // Assuming DR.png is for Digital Radiography background
-import xrayUnitsMachine from "../../assets/xray.png"; // For XRAY Units Machine
+import computedRadiographyBg from "../../assets/CR.png";
+import medicalXrayFilm from "../../assets/Xrayfilm.png";
+import wirelessDrPanel from "../../assets/Xraypanel.png";
+import digitalRadiographyBg from "../../assets/DR.png";
+import xrayUnitsMachine from "../../assets/xray.png";
 
 const ProductsSection = () => {
   const productsData = [
@@ -18,7 +16,7 @@ const ProductsSection = () => {
       title: "Computed",
       subtitle: "RADIOGRAPHY",
       tags: ["Affordable digital imaging", "reusable plates"],
-      bgImageUrl: computedRadiographyBg, // Use the imported image variable
+      bgImageUrl: computedRadiographyBg,
       knowMoreLink: "#computed-radiography",
       backgroundColorToken: "lightGray",
     },
@@ -33,7 +31,7 @@ const ProductsSection = () => {
         "fast processing",
         "sharp image contrast",
       ],
-      imageUrl: medicalXrayFilm, // Use the imported image variable
+      imageUrl: medicalXrayFilm,
       imageAlt: "Medical X-Ray Dry Film",
       knowMoreLink: "#dry-film",
       backgroundColorToken: "beige",
@@ -48,7 +46,7 @@ const ProductsSection = () => {
         "Optimized for Low Dose",
         "Seamless Digital Integration",
       ],
-      imageUrl: wirelessDrPanel, // Use the imported image variable
+      imageUrl: wirelessDrPanel,
       imageAlt: "Wireless digital X-ray DR panel",
       knowMoreLink: "#dr-panel",
       backgroundColorToken: "brown",
@@ -58,8 +56,8 @@ const ProductsSection = () => {
       layoutType: "default",
       title: "Digital",
       subtitle: "RADIOGRAPHY",
-      tags: [], // No tags visible in this one
-      bgImageUrl: digitalRadiographyBg, // Use the imported image variable
+      tags: [],
+      bgImageUrl: digitalRadiographyBg,
       knowMoreLink: "#digital-radiography",
       backgroundColorToken: "lightGray",
     },
@@ -67,8 +65,6 @@ const ProductsSection = () => {
 
   return (
     <section className="py-12 md:py-16 lg:py-20 lg:-mt-[30vw]">
-      {" "}
-      {/* Dark background for the whole section */}
       <div className="container mx-auto px-4">
         <header className="text-center mb-10 md:mb-12 lg:mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 text-dark">
@@ -103,7 +99,7 @@ const ProductsSection = () => {
           titlePart1="XRAY"
           titlePart2="Units"
           description="Reliable and high-performance X-ray machines designed for general radiography. Suitable for clinics, hospitals, and diagnostic centers needing consistent image quality and durable operation."
-          imageUrl={xrayUnitsMachine} // Use the imported image variable
+          imageUrl={xrayUnitsMachine}
           imageAlt="XRAY Units Machine"
           knowMoreLink="#xray-units"
         />

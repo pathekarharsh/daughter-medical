@@ -8,23 +8,23 @@ const ProductCard = ({
   imageUrl,
   imageAlt,
   knowMoreLink = "#",
-  layoutType = "default", // 'default' (bg image), 'imageLeft'
-  backgroundColorToken, // e.g., 'lightGray', 'beige', 'brown'
-  bgImageUrl, // For 'default' layout
+  layoutType = "default",
+  backgroundColorToken,
+  bgImageUrl,
 }) => {
   const cardBaseStyles =
     "rounded-2xl overflow-hidden shadow-lg flex flex-col min-h-[380px] md:min-h-[420px]";
 
   const bgClasses = {
-    lightGray: "bg-gray-100 text-gray-800", // For Digital Radiography
-    beige: "bg-[#FFE5B4] text-[#5E4D2D]", // For Medical X-Ray Dry Film (e.g. bg-brand-beige)
-    brown: "bg-[#8C4E27] text-[#FFC5A1]", // For Wireless Digital X-Ray (e.g. bg-brand-brown)
+    lightGray: "bg-gray-100 text-gray-800",
+    beige: "bg-[#FFE5B4] text-[#5E4D2D]",
+    brown: "bg-[#8C4E27] text-[#FFC5A1]",
   };
 
   const tagBgClasses = {
     lightGray: "bg-white text-black",
-    beige: "bg-[#F7CC79] text-yellow-800", // e.g. bg-brand-beige-tag text-brand-beige-tag-text
-    brown: "bg-[#BA774E] text-white", // e.g. bg-brand-brown-tag text-brand-brown-tag-text
+    beige: "bg-[#F7CC79] text-yellow-800",
+    brown: "bg-[#BA774E] text-white",
   };
 
   const cardDynamicStyles =
@@ -48,7 +48,6 @@ const ProductCard = ({
             backgroundColorToken === "beige" ? "bg-[#F7CC79]" : ""
           } ${backgroundColorToken === "brown" ? "" : ""}`}
         >
-          {/* For Wireless DR panel, image container might not need a separate bg if card bg is brown */}
           <img
             src={imageUrl}
             alt={imageAlt}

@@ -15,9 +15,9 @@ const Button = ({
   const variantStyles = {
     primary:
       "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 hover:shadow-sm focus:ring-gray-400",
-    // For the orange button, using Tailwind's orange. Adjust if you have custom brand colors.
+
     secondary:
-      "bg-orange-600 text-white hover:bg-orange-700 focus:ring-orange-500", // e.g., 'bg-brand-orange hover:bg-brand-orange-dark'
+      "bg-orange-600 text-white hover:bg-orange-700 focus:ring-orange-500",
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;

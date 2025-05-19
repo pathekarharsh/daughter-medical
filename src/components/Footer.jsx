@@ -4,7 +4,7 @@ import {
   MapPinIcon,
   EnvelopeIcon,
   ChevronRightIcon,
-} from "@heroicons/react/24/solid"; // Or /24/outline for outline style
+} from "@heroicons/react/24/solid";
 
 const Footer = () => {
   const quickLinks1 = [
@@ -14,7 +14,6 @@ const Footer = () => {
     { name: "Blog", href: "/blog" },
   ];
 
-  // Assuming the second "Quick links" column is the same for this example
   const quickLinks2 = [...quickLinks1];
 
   const contactInfo = [
@@ -30,7 +29,7 @@ const Footer = () => {
         "Near Friends Colony, Katol Road,",
         "Nagpur - 440013",
       ],
-      // href for address could be a Google Maps link
+
       hrefs: [
         "https://maps.google.com/?q=B/71, Aakar Nagar, Near Friends Colony, Katol Road, Nagpur - 440013",
       ],
@@ -68,7 +67,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links Column 2 */}
           <div>
             <h3 className="text-lg font-semibold text-orange-500 mb-4">
               Quick links
@@ -88,15 +86,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info Columns (Combined or separate depending on layout) */}
-          {/* For this design, it seems the contact info is in two conceptual columns */}
-
-          {/* Phone Numbers */}
           <div className="lg:col-span-1">
-            {" "}
-            {/* Adjust colspan if needed */}
-            {/* Intentionally empty or could be another section, or merge with next for wider contact area */}
-            {/* For the design, the first contact block (phone) takes one column conceptually */}
             {contactInfo
               .filter((info) => info.icon === PhoneIcon)
               .map((item, index) => (
@@ -104,8 +94,6 @@ const Footer = () => {
                   key={`contact-phone-${index}`}
                   className="flex items-start mb-0"
                 >
-                  {" "}
-                  {/* Removed mb-4 for tighter grouping like image */}
                   <item.icon className="w-5 h-5 text-orange-500 mt-1 mr-3 flex-shrink-0" />
                   <div>
                     {item.lines.map((line, lineIndex) => (
@@ -122,10 +110,8 @@ const Footer = () => {
               ))}
           </div>
 
-          {/* Address & Email */}
           <div className="lg:col-span-1">
             {" "}
-            {/* Adjust colspan if needed */}
             {contactInfo
               .filter((info) => info.icon !== PhoneIcon)
               .map((item, index) => (
@@ -167,7 +153,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Optional: Copyright line or social media icons can go here */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
           <p>
             © {new Date().getFullYear()} Daughter Medical. All rights reserved.

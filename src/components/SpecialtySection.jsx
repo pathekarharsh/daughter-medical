@@ -1,11 +1,6 @@
-// src/components/SpecialtySection/SpecialtySection.jsx
-import React from "react";
-import stethoscopeImage from "../assets/stethoscope.png"; // Replace with your actual image path
+import stethoscopeImage from "../assets/stethoscope.png";
 
-// Reusable Arrow Icon (or import from your icons folder)
-const ArrowRightIcon = (
-  { className = "w-4 h-4" } // Slightly smaller default for this button
-) => (
+const ArrowRightIcon = ({ className = "w-4 h-4" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
@@ -22,21 +17,9 @@ const ArrowRightIcon = (
 );
 
 const SpecialtySection = () => {
-  // Define colors (adjust these in your tailwind.config.js if they are brand colors)
-  // For demonstration, I'll use generic Tailwind color names or describe them.
-  // bg-peach: 'bg-orange-50' or 'bg-red-50' or a custom color like 'bg-peach-100'
-  // feature-tag-bg: 'bg-orange-100' or 'bg-peach-200'
-  // feature-tag-text: 'text-orange-600' or 'text-peach-700'
-  // main-card-bg: 'bg-orange-600' (a strong orange)
-  // button-bg: 'bg-white'
-  // button-text: 'text-gray-700'
-
   return (
     <section className="py-10 bg-orange-50">
-      {" "}
-      {/* Light peach/beige background */}
       <div className="container mx-auto px-4">
-        {/* Top "Feature" tag and "Our Specialty" Title */}
         <div className="text-center mb-10 md:mb-14">
           <span className="inline-block bg-orange_bg text-orange-600 px-5 py-2 rounded-full text-sm font-semibold   mb-4">
             Feature
@@ -46,10 +29,8 @@ const SpecialtySection = () => {
           </h2>
         </div>
 
-        {/* Main Content Card */}
         <div className="bg-orange-600 rounded-[40px] md:rounded-[60px] px-8 sm:px-10 md:px-12 lg:px-16 py-6 relative ">
           <div className="flex flex-col lg:flex-row items-center lg:gap-12">
-            {/* Text Content */}
             <div className="lg:w-3/5 text-white mb-10 lg:mb-0 text-center lg:text-left">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
                 Advanced Wireless Imaging Solutions for Modern Diagnostics
@@ -62,7 +43,7 @@ const SpecialtySection = () => {
                 imaging solutions for clinical excellence.
               </p>
               <a
-                href="#learn-more-specialty" // Replace with actual link
+                href="#learn-more-specialty"
                 className="inline-flex items-center bg-white text-gray-700 hover:bg-gray-100 px-6 py-3 rounded-lg text-sm font-semibold shadow-md transition-colors duration-200 ease-in-out group"
               >
                 learn more
@@ -70,15 +51,11 @@ const SpecialtySection = () => {
               </a>
             </div>
 
-            {/* Image Content */}
             <div className="lg:w-2/5 relative flex justify-center lg:justify-end lg:-mt-44 ">
-              {/* The image might need some negative margin or absolute positioning to "hang off" like in the design */}
               <img
                 src={stethoscopeImage}
                 alt="Stethoscope illustration"
                 className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none lg:w-[120%] lg:-mr-10 xl:-mr-20 object-contain drop-shadow-2xl"
-                // Adjust lg:w-[120%] and lg:-mr-10 / xl:-mr-20 to make it larger and hang off the right edge
-                // The drop-shadow-2xl adds a nice depth effect
               />
             </div>
           </div>

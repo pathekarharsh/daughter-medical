@@ -1,20 +1,17 @@
-// src/components/ImageCarousel/ImageCarousel.jsx
-import React, { useRef, useEffect, useState } from "react"; // Added useState
+import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// Import your images
 import spineImage from "../../assets/carousel-spine.jpg";
 import xrayFilmsImage from "../../assets/carousel-xray-films.jpg";
 import xrayUnitImage from "../../assets/carousel-xray-unit.jpg";
 import ctScanImage from "../../assets/carousel-ct-scan.jpg";
 import cr from "../../assets/CR.jpg";
-// Icon Components
+
 const ArrowLeftIcon = ({ className = "w-6 h-6" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -83,16 +80,14 @@ const imageData = [
 ];
 
 const ImageCarousel = () => {
-  const swiperRef = useRef(null); // Ref for the Swiper instance itself
+  const swiperRef = useRef(null);
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
-  const [swiperLoaded, setSwiperLoaded] = useState(false); // To ensure refs are assigned after Swiper is ready
+  const [swiperLoaded, setSwiperLoaded] = useState(false);
 
   const navButtonBaseClasses =
     "absolute top-1/2 -translate-y-1/2 z-10 bg-orange_bg p-3 rounded-full transition-colors text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-orange disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
-  // This effect ensures that the navigation elements are assigned to Swiper
-  // AFTER both Swiper is initialized and our button DOM elements are available.
   useEffect(() => {
     if (
       swiperRef.current &&
@@ -103,11 +98,11 @@ const ImageCarousel = () => {
       const swiperInstance = swiperRef.current.swiper;
       swiperInstance.params.navigation.prevEl = swiperNavPrevRef.current;
       swiperInstance.params.navigation.nextEl = swiperNavNextRef.current;
-      swiperInstance.navigation.init(); // Re-initialize navigation module
-      swiperInstance.navigation.update(); // Update navigation state (e.g., disabled states)
-      setSwiperLoaded(true); // Indicate that swiper is fully configured
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+      setSwiperLoaded(true);
     }
-  }, []); // Empty dependency array: run once after initial render
+  }, []);
 
   return (
     <section className="py-12 md:py-16 text-white relative">
@@ -119,19 +114,16 @@ const ImageCarousel = () => {
         </div>
 
         <div className="relative">
-          {/* Render buttons only after Swiper is loaded to ensure refs are correctly passed */}
-          {/* Or, alternatively, hide them until swiperLoaded is true */}
           <button
             ref={swiperNavPrevRef}
             aria-label="Previous slide"
             className={`${navButtonBaseClasses} left-0 sm:-left-4 md:-left-6`}
-            // disabled={!swiperLoaded} // Optional: disable until swiper is fully loaded
           >
             <ArrowLeftIcon className="w-5 h-5 sm:w-6 sm:h-6 stroke-orange" />
           </button>
 
           <Swiper
-            ref={swiperRef} // Assign ref to Swiper component
+            ref={swiperRef}
             modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={20}
             slidesPerView={"auto"}
@@ -147,18 +139,10 @@ const ImageCarousel = () => {
               bulletClass: "swiper-pagination-bullet",
               bulletActiveClass: "swiper-pagination-bullet-active",
             }}
-            // Initial navigation setup (can be empty or point to refs, but useEffect will override)
             navigation={{
-              prevEl: swiperNavPrevRef.current, // Swiper might pick this up if elements render fast enough
+              prevEl: swiperNavPrevRef.current,
               nextEl: swiperNavNextRef.current,
             }}
-            // onInit is another good place, but useEffect provides more control over DOM readiness
-            // onInit={(swiper) => {
-            //   swiper.params.navigation.prevEl = swiperNavPrevRef.current;
-            //   swiper.params.navigation.nextEl = swiperNavNextRef.current;
-            //   swiper.navigation.init();
-            //   swiper.navigation.update();
-            // }}
             className="image-swiper !pb-12"
           >
             {imageData.map((image) => (
@@ -184,7 +168,6 @@ const ImageCarousel = () => {
             ref={swiperNavNextRef}
             aria-label="Next slide"
             className={`${navButtonBaseClasses} right-0 sm:-right-4 md:-right-6`}
-            // disabled={!swiperLoaded} // Optional
           >
             <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 stroke-orange" />
           </button>

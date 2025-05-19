@@ -1,4 +1,3 @@
-// A simple SVG arrow icon, you can use any icon library or your own SVGs
 const ArrowRightIcon = ({ className = "", size = "1em" }) => (
   <svg
     width="32"

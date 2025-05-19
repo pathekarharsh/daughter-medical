@@ -1,8 +1,4 @@
-// src/components/ClientsSection/ClientsSection.jsx
-import React from "react";
-
-// Placeholder images - replace with your actual client avatar images
-import client1 from "../assets/client1.jpg"; // e.g., src/assets/client-avatar-1.jpg
+import client1 from "../assets/client1.jpg";
 import client2 from "../assets/client2.jpg";
 import client3 from "../assets/client3.jpg";
 
@@ -15,10 +11,7 @@ const ClientsSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      {" "}
-      {/* Changed background to white */}
       <div className="container mx-auto px-4">
-        {/* Top "Clients" tag and "our clients" Title & Subtitle */}
         <div className="text-center mb-10 md:mb-16">
           <span className="inline-block bg-orange_bg text-orange px-6 py-2 rounded-full text-sm font-semibold  mb-4">
             Clients
@@ -43,7 +36,7 @@ const ClientsSection = () => {
                   src={avatar.src}
                   alt={avatar.alt}
                   className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-white shadow-md"
-                  style={{ zIndex: clientAvatars.length + index }} // To ensure correct stacking order
+                  style={{ zIndex: clientAvatars.length + index }}
                 />
               ))}
               <button className="w-12 h-12 sm:w-16 sm:h-16 bg-black z-10 rounded-full cursor-pointer text-white text-4xl">
@@ -51,7 +44,6 @@ const ClientsSection = () => {
               </button>
             </div>
 
-            {/* 500+ Happy Clients Text */}
             <div className="text-left sm:text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
                 500+
