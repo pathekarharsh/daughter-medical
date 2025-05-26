@@ -8,10 +8,11 @@ import {
 
 const Footer = () => {
   const quickLinks1 = [
-    { name: "About", href: "/about" },
-    { name: "Testimonials", href: "/testimonials" },
-    { name: "Contact", href: "/contact" },
-    { name: "Blog", href: "/blog" },
+    { name: "About", href: "/#/about" },
+    { name: "Product", href: "/#/product" },
+    { name: "Service", href: "/#/service" },
+    { name: "Contact", href: "/#/contact" },
+    { name: "Blog", href: "/#/blog" },
   ];
 
   const quickLinks2 = [...quickLinks1];
@@ -19,19 +20,20 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: PhoneIcon,
-      lines: ["+91 762 069 8897", "+91 895 608 9731"],
-      hrefs: ["tel:+917620698897", "tel:+918956089731"],
+      lines: ["+91 902 214 0014", "+91 762 069 8897"],
+      hrefs: ["tel:+919022140014", "tel:+917620698897"],
     },
     {
       icon: MapPinIcon,
       lines: [
-        "B/71, Aakar Nagar,",
-        "Near Friends Colony, Katol Road,",
-        "Nagpur - 440013",
+        "Shop No. G/005,",
+        "Indravati Apartment, M. B. Estate,",
+        "Near Aakar Nagar, Katol Road, ",
+        "Nagpur - 440013"
       ],
 
       hrefs: [
-        "https://maps.google.com/?q=B/71, Aakar Nagar, Near Friends Colony, Katol Road, Nagpur - 440013",
+        "https://maps.app.goo.gl/FuBizxdgucQJ6o2o8, Indravati Apartment, Aakar Nagar, Katol Road, Nagpur - 440013",
       ],
     },
     {
