@@ -55,7 +55,11 @@ const Products = () => {
       layoutType: "default",
       title: "Digital",
       subtitle: "RADIOGRAPHY",
-      tags: ["High-resolution imaging", "Immediate results", "DICOM compatible"],
+      tags: [
+        "High-resolution imaging",
+        "Immediate results",
+        "DICOM compatible",
+      ],
       bgImageUrl: digitalRadiographyBg,
       knowMoreLink: "/products/digital-radiography",
       bgColorClass: "bg-gray-100",
@@ -68,13 +72,16 @@ const Products = () => {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="w-fit bg-orange_bg px-6 py-1 rounded-full mx-auto mb-4">
-            <p className="text-orange text-sm md:text-base font-medium">Our Products</p>
+            <p className="text-orange text-sm md:text-base font-medium">
+              Our Products
+            </p>
           </div>
           <h1 className="mt-2 font-bold text-dark leading-tight text-3xl sm:text-4xl md:text-5xl">
             Advanced Medical Imaging Solutions
           </h1>
           <p className="text-gray-600 text-base md:text-lg mt-4 max-w-3xl mx-auto">
-            High-performance diagnostic equipment designed for precision, efficiency, and patient safety.
+            High-performance diagnostic equipment designed for precision,
+            efficiency, and patient safety.
           </p>
         </div>
 
@@ -83,7 +90,7 @@ const Products = () => {
           {productsData.map((product) => (
             <div
               key={product.id}
-              className={`${product.bgColorClass} rounded-2xl md:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300`}
+              className={`${product.bgColorClass} rounded-2xl md:rounded-3xl overflow-hidden border border-gray-200 transition-all duration-300`}
             >
               {product.layoutType === "default" ? (
                 <div className="relative h-[320px] sm:h-[400px] md:h-[460px] bg-gray-200">
@@ -120,11 +127,11 @@ const Products = () => {
               ) : (
                 <div className="flex flex-col md:flex-row h-full">
                   {/* Image */}
-                  <div className="md:w-1/2 h-[260px] md:h-[320px]">
+                  <div className="md:w-1/2 h-[260px] md:h-[320px] flex justify-center items-center">
                     <img
                       src={product.imageUrl}
                       alt={product.imageAlt}
-                      className="w-full h-full object-cover object-center"
+                      className="w-auto h-full object-fit object-center"
                     />
                   </div>
 
@@ -170,7 +177,8 @@ const Products = () => {
             Need Help Choosing the Right Product?
           </h2>
           <p className="text-orange-100 text-base md:text-lg mb-6 max-w-2xl mx-auto">
-            Our specialists are ready to help you select the perfect imaging solution for your facility.
+            Our specialists are ready to help you select the perfect imaging
+            solution for your facility.
           </p>
           <Link
             to="/contact"

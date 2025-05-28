@@ -29,7 +29,7 @@ const Footer = () => {
         "Shop No. G/005,",
         "Indravati Apartment, M. B. Estate,",
         "Near Aakar Nagar, Katol Road, ",
-        "Nagpur - 440013"
+        "Nagpur - 440013",
       ],
 
       hrefs: [
@@ -47,8 +47,8 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
       {" "}
       {/* Dark background */}
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <div className="container mx-auto px-4 ">
+        <div className="flex justify-between flex-col md:flex-row gap-8">
           {/* Quick Links Column 1 */}
           <div>
             <h3 className="text-lg font-semibold text-orange-500 mb-4">
@@ -69,89 +69,71 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold text-orange-500 mb-4">
-              Quick links
-            </h3>
-            <ul className="space-y-2">
-              {quickLinks2.map((link) => (
-                <li key={`${link.name}-2`}>
-                  <a
-                    href={link.href}
-                    className="hover:text-orange-400 transition-colors duration-200 flex items-center text-sm"
+          <div className="flex gap-10 flex-col md:flex-row">
+            <div className="">
+              {contactInfo
+                .filter((info) => info.icon === PhoneIcon)
+                .map((item, index) => (
+                  <div
+                    key={`contact-phone-${index}`}
+                    className="flex items-start mb-0"
                   >
-                    {link.name}
-                    <ChevronRightIcon className="w-3 h-3 ml-1 opacity-70" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-1">
-            {contactInfo
-              .filter((info) => info.icon === PhoneIcon)
-              .map((item, index) => (
-                <div
-                  key={`contact-phone-${index}`}
-                  className="flex items-start mb-0"
-                >
-                  <item.icon className="w-5 h-5 text-orange-500 mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    {item.lines.map((line, lineIndex) => (
-                      <a
-                        key={lineIndex}
-                        href={item.hrefs[lineIndex]}
-                        className="block text-sm hover:text-orange-400 transition-colors duration-200 leading-relaxed"
-                      >
-                        {line}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ))}
-          </div>
-
-          <div className="lg:col-span-1">
-            {" "}
-            {contactInfo
-              .filter((info) => info.icon !== PhoneIcon)
-              .map((item, index) => (
-                <div
-                  key={`contact-other-${index}`}
-                  className="flex items-start mb-5 last:mb-0"
-                >
-                  <item.icon className="w-5 h-5 text-orange-500 mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    {item.lines.map((line, lineIndex) =>
-                      item.hrefs && item.hrefs[lineIndex] ? (
+                    <item.icon className="w-5 h-5 text-orange-500 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      {item.lines.map((line, lineIndex) => (
                         <a
                           key={lineIndex}
                           href={item.hrefs[lineIndex]}
-                          target={
-                            item.icon === MapPinIcon ? "_blank" : undefined
-                          }
-                          rel={
-                            item.icon === MapPinIcon
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
                           className="block text-sm hover:text-orange-400 transition-colors duration-200 leading-relaxed"
                         >
                           {line}
                         </a>
-                      ) : (
-                        <p
-                          key={lineIndex}
-                          className="block text-sm leading-relaxed"
-                        >
-                          {line}
-                        </p>
-                      )
-                    )}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+            </div>
+            <div className="">
+              {" "}
+              {contactInfo
+                .filter((info) => info.icon !== PhoneIcon)
+                .map((item, index) => (
+                  <div
+                    key={`contact-other-${index}`}
+                    className="flex items-start mb-5 last:mb-0"
+                  >
+                    <item.icon className="w-5 h-5 text-orange-500 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      {item.lines.map((line, lineIndex) =>
+                        item.hrefs && item.hrefs[lineIndex] ? (
+                          <a
+                            key={lineIndex}
+                            href={item.hrefs[lineIndex]}
+                            target={
+                              item.icon === MapPinIcon ? "_blank" : undefined
+                            }
+                            rel={
+                              item.icon === MapPinIcon
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            className="block text-sm hover:text-orange-400 transition-colors duration-200 leading-relaxed"
+                          >
+                            {line}
+                          </a>
+                        ) : (
+                          <p
+                            key={lineIndex}
+                            className="block text-sm leading-relaxed"
+                          >
+                            {line}
+                          </p>
+                        )
+                      )}
+                    </div>
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
 
